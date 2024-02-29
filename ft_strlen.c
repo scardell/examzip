@@ -25,7 +25,7 @@ int	ft_strlen(char *str)
 
 int main (void)
 {
-	char	mystr[] = "this is my str16";
+	char	mystr[] = "this is my strv17";
 	printf("%d\n", ft_strlen(mystr));
 	return (0);
 }
