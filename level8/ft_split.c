@@ -6,7 +6,7 @@
 /*   By: scardell <scardell@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 15:56:29 by scardell          #+#    #+#             */
-/*   Updated: 2024/03/01 16:02:04 by scardell         ###   ########.fr       */
+/*   Updated: 2024/03/01 16:09:09 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,18 @@ char	**ft_split(char *str)
 	}
 	out[k] = NULL;
 	return (out);
+}
+
+#include <stdio.h>
+int	main()
+ {
+ 	char **frase = ft_split("hola que tal");
+	int i = 0;
+
+ 	while (frase[i])
+ 	{
+ 		printf("string %d: %s\n", i, frase[i]);
+ 		i++;
+ 	}
+ 	return (0);
 }
