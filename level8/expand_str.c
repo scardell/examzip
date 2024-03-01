@@ -6,7 +6,7 @@
 /*   By: scardell <scardell@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 09:26:38 by scardell          #+#    #+#             */
-/*   Updated: 2024/03/01 10:08:29 by scardell         ###   ########.fr       */
+/*   Updated: 2024/03/01 11:23:54 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,3 @@ int		main(int argc, char **argv)
 		write(1, "\n", 1);
 	return (0);
 }
-/* 
-int	main(int argc, char **argv)
-{
-	int	i;
-	int j;
-
-	i = 0;
-	j = 0;
-	if (argc == 0)
-	{
-		while (argv[1][i] == ' ' || argv[1][i] == '\t')
-			i++;
-		while (argv[1][i])
-		{
-			if (argv[1][i] == ' ' || argv[1][i] == '\t')
- */

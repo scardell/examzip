@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   inter.c                                            :+:      :+:    :+:   */
+/*   ft_rrange.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scardell <scardell@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/01 11:34:32 by scardell          #+#    #+#             */
-/*   Updated: 2024/03/01 15:35:15 by scardell         ###   ########.fr       */
+/*   Created: 2024/03/01 15:54:51 by scardell          #+#    #+#             */
+/*   Updated: 2024/03/01 15:57:56 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int	inter(char *str, char c, int len)
+int *ft_rrange(int start, int end)
 {
-	int	i = 0;
+	int *range;
+	int i = 0;
+	int step = 1;
+	int n = end - start;
 
-	while (str[i] && (i < len || len == -1))
-		if (str[i++] == c)
-			return (1);
-	return (0);
-}
+	if (n < 0)
+		(n *= -1);
+	n++;
 
-int	main(int argc, char *argv[])
-{
-	int	i;
-
-	if (argc == 3)
+	range = (int *)malloc(sizeof(int) * n);
+	if (range)
 	{
-		i = 0;
-		while (argv[1][i])
+		if (start < end)
+			step = -1;
+		while (i < n)
 		{
-			if (!inter(argv[1], argv[1][i], i) && inter(argv[2], argv[1][i], -1))
-				write(1, &argv[1][i], 1);
-			i += 1;
+			range[i] = end;
+			end = end + step;
+			i++;
 		}
 	}
-	write(1, "\n", 1);
-	return (0);
+	return (range);
 }
-
