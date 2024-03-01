@@ -6,7 +6,7 @@
 /*   By: scardell <scardell@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 09:34:56 by scardell          #+#    #+#             */
-/*   Updated: 2024/02/28 14:17:17 by scardell         ###   ########.fr       */
+/*   Updated: 2024/03/01 09:37:05 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int main(int argc, char **argv)
 	write(1, "\n", 1);
 	return (0);
 }
+//char *s1 = argv[1]
 /*Write a program that takes a string, and displays the first 'a' character it
 encounters in it, followed by a newline. If there are no 'a' characters in the
 string, the program just writes a newline. If the number of parameters is not
