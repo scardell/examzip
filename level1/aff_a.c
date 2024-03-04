@@ -19,12 +19,11 @@ void	aff_a(char *str, int c)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == c)
+		if (str[i++] == c)
 		{
 			write(1, &c, 1);
 			break;
 		}
-		i++;
 	}
 }
 
