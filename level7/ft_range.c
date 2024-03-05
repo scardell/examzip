@@ -12,26 +12,43 @@
 
 #include <stdlib.h>
 
-int *ft_range(int start, int end)
+int        *ft_range(int start, int end)
 {
-	int i = 0;
-	int len = abs((end - start)) + 1;
-	int *res = (int *)malloc(sizeof(int) * len);
-	
-	while (i < len)
-	{
-		if (start < end)
-		{
-			res[i] = start;
-			start++;
-			i++;
-		}
-		else
-		{
-			res[i] = start;
-			start--;
-			i++;
-		}
-	}
-        return (res);
+        long        i;
+        long len;
+
+        if (end > start)
+                len = (long)end - (long)start + 1;
+        if (start> end)
+                len = (long)start - (long)end + 1;
+
+        int *numbers;
+        i = 0;
+        numbers = (int *)malloc(sizeof(int) * len);
+        if (!numbers)
+                return (NULL);
+
+        while (i < len)
+        {
+                if (start <= end)
+                        numbers[i++] = start++;
+                else
+                        numbers[i++] = start--;
+        }
+        return (numbers);
 }
+
+// #include <stdio.h>
+
+// int        main(void)
+// {
+//         // int start = -2;
+//         // int end = 2;
+//         int start = -2147483648;
+//         int end = 2147483647;
+//         int *prueba = ft_range(start, end);
+//         int i = 0;
+//         while (i < 4)
+//                 printf("%d |", prueba[i++]);
+//         return (0);
+// }
