@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fizzbuzz.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scardell <scardell@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: scardell <scardell@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 15:15:02 by scardell          #+#    #+#             */
-/*   Updated: 2024/02/29 15:28:53 by scardell         ###   ########.fr       */
+/*   Updated: 2024/03/05 10:35:43 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,20 @@ void	ft_write_number(int nb)
 
 int	main(void)
 {
-	int	i;
+	int	n;
 
-	i = 1;
-	while (i <= 100)
+	n = 1;
+	while (n <= 100)
 	{
-		if (i % 15 == 0)
+		if (n % 15 == 0)
 			write(1,"fizzbuzz", 8);
-		else if (i % 3 == 0)
+		else if (n % 3 == 0)
 			write(1, "fizz", 4);
-		else if (i % 5 == 0)
+		else if (n % 5 == 0)
 			write(1, "buzz", 4);
 		else
-			ft_write_number(i);
-		i++;
+			ft_write_number(n);
+		n++;
 		write(1, "\n", 1);
 	}
 	return (0);

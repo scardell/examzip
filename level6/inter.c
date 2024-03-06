@@ -6,7 +6,7 @@
 /*   By: scardell <scardell@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:34:32 by scardell          #+#    #+#             */
-/*   Updated: 2024/03/01 15:35:15 by scardell         ###   ########.fr       */
+/*   Updated: 2024/03/06 13:27:42 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int	inter(char *str, char c, int len)
 	return (0);
 }
 
-int	main(int argc, char *argv[])
+int	main(int argc, char **argv)
 {
 	int	i;
-
+	
 	if (argc == 3)
 	{
 		i = 0;
@@ -33,7 +33,7 @@ int	main(int argc, char *argv[])
 		{
 			if (!inter(argv[1], argv[1][i], i) && inter(argv[2], argv[1][i], -1))
 				write(1, &argv[1][i], 1);
-			i += 1;
+			i ++;
 		}
 	}
 	write(1, "\n", 1);
