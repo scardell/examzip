@@ -13,60 +13,49 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char *ft_strncpy(char *s1, char *s2, int n)
+int	ft_isspace(int i)
 {
-	int i = -1;
-
-	while (++i < n && s2[i])
-		s1[i] = s2[i];
-	s1[i] = '\0';
-	return (s1);
+	return (i == ' ' || (i >= 9 && i <= 13));
 }
 
 char	**ft_split(char *str)
 {
-	int i = 0;
-	int j = 0;
-	int k = 0;
-	int wc = 0;
-	while (str[i])
-	{
-		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
-			i++;
-		if (str[i])
-			wc++;
-		while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
-			i++;
-	}
-	char **out = (char **)malloc(sizeof(char *) * (wc + 1));
+	int i;
+	int j;
+	int k;
+	char **out;
+
 	i = 0;
-	while (str[i])
-	{
-		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
+	k = 0;
+	if (!(out = (char **)malloc(sizeof(char *) * 256)))
+		return (NULL);
+		while (ft_isspace(str[i]))
 			i++;
-		j = i;
-		while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
-			i++;
-		if (i > j)
+		while (str[i])
 		{
-			out[k] = (char *)malloc(sizeof(char) * ((i - j) + 1));
-			ft_strncpy(out[k++], &str[j], i - j);
+			j = 0;
+		if (!(out[k] = (char *)malloc(sizeof(char) * 4096)))
+				return (NULL);
+			while (!ft_isspace(str[i]))
+			out[k][j++] = str[i++];
+			while (ft_isspace(str[i]))
+				i++;
+			out[k][j] = '\0';
+			k++;
 		}
-	}
-	out[k] = NULL;
-	return (out);
+		out[k] = NULL;
+		return (out);
 }
 
-#include <stdio.h>
-int	main()
- {
- 	char **frase = ft_split("hola que tal");
+int main()
+{
+	char *str = "   hola   que tal   estas";
+	char **out = ft_split(str);
 	int i = 0;
-
- 	while (frase[i])
- 	{
- 		printf("string %d: %s\n", i, frase[i]);
- 		i++;
- 	}
- 	return (0);
+	while (out[i])
+	{
+		printf("%s\n", out[i]);
+		i++;
+	}
+	return (0);
 }
