@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_13.c                                           :+:      :+:    :+:   */
+/*   first_word_v2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scardell <scardell@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/01 10:35:44 by scardell          #+#    #+#             */
-/*   Updated: 2024/03/19 09:34:26 by scardell         ###   ########.fr       */
+/*   Created: 2024/03/19 09:35:24 by scardell          #+#    #+#             */
+/*   Updated: 2024/03/19 09:59:08 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int argc, char **argv)
+int space(int i)
+{
+    return (i == ' ' || (i >= 9 && i <= 13));
+}
+
+int printable(int i)
+{
+    return (i >= 33 && i <= 126);
+}
+
+int main(int argc, char **argv)
 {
     int i;
 
-    i= 0;
+    i = 0;
     if (argc == 2)
     {
-        while (argv[1][i])
+        while (space(argv[1][i]))
+            i++;
+        while (printable(argv[1][i]))
         {
-            if (argv[1][i] >= 'a' && argv[1][i] <= 'm' || argv[1][i] >= 'A' && argv[1][i] <= 'M')
-                argv[1][i] = argv[1][i] +13;
-            else if (argv[1][i] >= 'n' && argv[1][i]<= 'z' || argv[1][i] >= 'N' && argv[1][i] <= 'Z')
-                argv[1][i] = argv[1][i] -13;
             write(1, &argv[1][i], 1);
             i++;
         }
     }
     write(1, "\n", 1);
-    return (0);
+    return(0);
 }

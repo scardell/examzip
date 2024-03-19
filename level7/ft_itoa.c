@@ -6,7 +6,7 @@
 /*   By: scardell <scardell@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 15:55:37 by scardell          #+#    #+#             */
-/*   Updated: 2024/03/01 15:59:59 by scardell         ###   ########.fr       */
+/*   Updated: 2024/03/11 13:16:38 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,15 @@ char *ft_itoa(int nbr)
 		nbr /= 10;
 	}
 	return result;
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+		char *n = ft_itoa(2147483647);
+	
+		printf("%s", n);
+		
+		return(0);
 }

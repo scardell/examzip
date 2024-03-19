@@ -6,7 +6,7 @@
 /*   By: scardell <scardell@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 09:24:32 by scardell          #+#    #+#             */
-/*   Updated: 2024/02/29 10:51:37 by scardell         ###   ########.fr       */
+/*   Updated: 2024/03/14 08:12:11 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,9 @@ void	aff_first_param(char *str)
 
 int main(int argc, char **argv)
 {
-	if (argc < 2)
-		write(1, "\n", 1);
 	if (argc >= 2)
-	{
 		aff_first_param(argv[1]);
-		write(1, "\n", 1);
-	}
+	write(1, "\n", 1);
 	return (0);
 }
 /* Write a program that takes strings as arguments, and displays its first

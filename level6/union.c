@@ -6,7 +6,7 @@
 /*   By: scardell <scardell@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 15:33:39 by scardell          #+#    #+#             */
-/*   Updated: 2024/03/01 15:43:31 by scardell         ###   ########.fr       */
+/*   Updated: 2024/03/13 11:58:13 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ int main(int argc, char **argv)
 	{
 		while(argv[1][i])
 		{
-			if (!check(argv[1], argv[1][i], i)
+			if (!check(argv[1], argv[1][i], i))
 				write(1, &argv[1][i], 1);
 				i++;
 		}
 		while(argv[2][j])
 		{
-			if (!check (argv[1], argv[2][j], i) && !scheck(argv[2], argv[2]][j], j))
+			if (!check (argv[1], argv[2][j], i) && !check(argv[2], argv[2][j], j))
 				write(1, &argv[2][j], 1);
 				j++;
 		}

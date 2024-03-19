@@ -6,11 +6,9 @@
 /*   By: scardell <scardell@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 15:54:51 by scardell          #+#    #+#             */
-/*   Updated: 2024/03/06 13:15:22 by scardell         ###   ########.fr       */
+/*   Updated: 2024/03/08 12:46:52 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
 
 #include <stdlib.h>
 
@@ -40,6 +38,7 @@ int	*ft_rrange(int start, int end)
 }
 
  #include <stdio.h>
+ 
  int        main(void)
 {
 	int *prueba;

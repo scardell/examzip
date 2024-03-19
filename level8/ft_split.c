@@ -6,7 +6,7 @@
 /*   By: scardell <scardell@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 15:56:29 by scardell          #+#    #+#             */
-/*   Updated: 2024/03/07 07:09:48 by scardell         ###   ########.fr       */
+/*   Updated: 2024/03/14 07:58:58 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,22 @@ char	**ft_split(char *str)
 	k = 0;
 	if (!(out = (char **)malloc(sizeof(char *) * 256)))
 		return (NULL);
+	while (ft_isspace(str[i]))
+			i++;
+	while (str[i])
+	{
+		j = 0;
+		if (!(out[k] = (char *)malloc(sizeof(char) * 4096)))
+			return (NULL);
+		while (!ft_isspace(str[i]))
+		out[k][j++] = str[i++];
 		while (ft_isspace(str[i]))
 			i++;
-		while (str[i])
-		{
-			j = 0;
-		if (!(out[k] = (char *)malloc(sizeof(char) * 4096)))
-				return (NULL);
-			while (!ft_isspace(str[i]))
-			out[k][j++] = str[i++];
-			while (ft_isspace(str[i]))
-				i++;
-			out[k][j] = '\0';
-			k++;
-		}
-		out[k] = NULL;
-		return (out);
+		out[k][j] = '\0';
+		k++;
+	}
+	out[k] = NULL;
+	return (out);
 }
 
 #include <stdio.h>
@@ -51,7 +51,7 @@ char	**ft_split(char *str)
 int main()
 {
 	
-	char **out = ft_split("   hola   que tal   estas");
+	char **out = ft_split("three words apart");
 	
 	printf("%s\n", out[0]);
 	printf("%s\n", out[1]);	
