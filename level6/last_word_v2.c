@@ -17,7 +17,6 @@ void	ft_last_word(char *str)
 	int j;
 
 	i = 0;
-	j = 0;
 	while (str[i])
 	{
 		if (space(str[i]) && printable(str[i + 1]))
